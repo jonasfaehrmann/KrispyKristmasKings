@@ -2,7 +2,11 @@ body {
     margin: 20px;
     justify-content: center;
     align-items: center;
-    background-color: #AAD99E;
+    background: url(../images/backgroundWallpaper.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .headerText {

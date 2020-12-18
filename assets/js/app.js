@@ -59,6 +59,13 @@ function forEachElements (array, callback, scope) {
   }
 }
 
+function createBannerButton (text) {
+  const container = document.createElement('button')
+  container.classList.add('buttonBannerContainer')
+  container.innerText = text
+  return container
+}
+
 function resetPage () {
   document.querySelector('body').innerHTML = ''
 }
@@ -79,17 +86,17 @@ function goToPageEventListener () {
   })
 }
 
-function initializeCategoryPage (params) {
+function initializeCategoryPage () {
   document.querySelector('body').appendChild(createHeader('Category'))
   console.log('Hello Category')
 }
 
-function initializePersonPage (params) {
-  document.querySelector('body').appendChild(createHeader('Person'))
-  document.querySelector('body').appendChild(createInputBanner(['Dog', 'Your Mom']))
-  document.querySelector('body').appendChild(createInputBanner(['Dog', 'Your Mom']))
-  document.querySelector('body').appendChild(createInputBanner(['Dog', 'Your Mom']))
-  document.querySelector('body').appendChild(createNextPageButton('category'))
+function initializePersonPage () {
+  document.querySelector('body').appendChild(createHeader('Categories'))
+  document.querySelector('body').appendChild(createFairyLights(5))
+  document.querySelector('body').appendChild(createBannerButton('Self-Made'))
+  document.querySelector('body').appendChild(createBannerButton('Bought'))
+  document.querySelector('body').appendChild(createBannerButton('Events'))
   goToPageEventListener()
 }
 

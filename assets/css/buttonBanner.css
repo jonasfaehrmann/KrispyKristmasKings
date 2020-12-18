@@ -1,0 +1,15 @@
+.buttonBannerContainer {
+    font-family: Noto Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+    text-decoration: underline;
+    border: none;
+    color: #d9cb9e;
+    background: url(../images/inputBanner.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    padding-top: 34px;
+    text-align: center;
+}
