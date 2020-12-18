@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   goToPageEventListener()
 })
 
+function createKrispyKristmasLogo () {
+  const container = document.createElement('div')
+  container.classList.add('kkLogo')
+  return container
+}
+
 function createFairyLights (quantity) {
   const container = document.createElement('div')
   container.classList.add('fairyLightsContainer')
@@ -19,6 +25,7 @@ function initializeStarterPage () {
   document.querySelector('body').appendChild(createHeader('Start'))
   document.querySelector('body').appendChild(createFairyLights(5))
   initializeFairyLights()
+  document.querySelector('body').appendChild(createKrispyKristmasLogo())
   document.querySelector('body').appendChild(createNextPageButton('person'))
 }
 
