@@ -1,0 +1,6 @@
+.nextPageButton {
+    background: url('../images/nextPageButton.svg') no-repeat;
+    height: 103px;
+    width: 94px;
+    border: none;
+}

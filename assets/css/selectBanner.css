@@ -1,0 +1,21 @@
+.selectBannerContainer {
+    background: url(../images/inputBanner.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    padding-top: 34px;
+    height: 200px;
+    text-align: center;
+}
+
+.selectBanner {
+    font-family: Noto Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    width: 229px;
+    box-shadow: none !important;
+    color: #d9cb9e;
+    background: #e3171b;
+    border: none;
+    color: #fff;
+}
