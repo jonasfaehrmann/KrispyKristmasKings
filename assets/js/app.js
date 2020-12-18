@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   initializeStarterPage()
-  goToPageEventListener()
 })
 
 function createKrispyKristmasLogo () {
@@ -26,7 +25,8 @@ function initializeStarterPage () {
   document.querySelector('body').appendChild(createFairyLights(5))
   initializeFairyLights()
   document.querySelector('body').appendChild(createKrispyKristmasLogo())
-  document.querySelector('body').appendChild(createNextPageButton('person'))
+  document.querySelector('body').appendChild(createNextPageButton('category'))
+  goToPageEventListener()
 }
 
 function initializeFairyLights () {
@@ -48,6 +48,7 @@ function initializeFairyLights () {
       value.style.boxShadow = `0px 0px 15px ${colors[i]}`
     })
   }
+  lights()
   const interval = setInterval(() => {
     lights()
   }, timerInterval)
@@ -59,10 +60,11 @@ function forEachElements (array, callback, scope) {
   }
 }
 
-function createBannerButton (text) {
+function createBannerButton (text, value) {
   const container = document.createElement('button')
   container.classList.add('buttonBannerContainer')
   container.innerText = text
+  container.value = value
   return container
 }
 
@@ -71,32 +73,57 @@ function resetPage () {
 }
 
 function goToPageEventListener () {
-  document.querySelector('.nextPageButton').addEventListener('click', (el) => {
-    resetPage()
-    switch (el.target.value) {
-      case 'category':
-        initializeCategoryPage()
-        break
-      case 'person':
-        initializePersonPage()
-        break
-      default:
-        break
-    }
+  const buttons = document.querySelectorAll('.buttonBannerContainer, .nextPageButton')
+  forEachElements(buttons, function (index, value) {
+    value.addEventListener('click', (el) => {
+      switch (el.target.value) {
+        case 'category':
+          resetPage()
+          initializeCategoryPage()
+          break
+        case 'selfmade':
+          resetPage()
+          initializeSelfmadePage()
+          break
+        case 'bought':
+          resetPage()
+          initializeBoughtPage()
+          break
+        case 'events':
+          resetPage()
+          initializeEventsPage()
+          break
+        default:
+          break
+      }
+    })
   })
 }
 
-function initializeCategoryPage () {
-  document.querySelector('body').appendChild(createHeader('Category'))
+function initializeSelfmadePage () {
+  document.querySelector('body').appendChild(createHeader('Self-Made'))
   console.log('Hello Category')
+  goToPageEventListener()
 }
 
-function initializePersonPage () {
+function initializeBoughtPage () {
+  document.querySelector('body').appendChild(createHeader('Bought'))
+  console.log('Hello Category')
+  goToPageEventListener()
+}
+
+function initializeEventsPage () {
+  document.querySelector('body').appendChild(createHeader('Events'))
+  console.log('Hello Category')
+  goToPageEventListener()
+}
+
+function initializeCategoryPage () {
   document.querySelector('body').appendChild(createHeader('Categories'))
   document.querySelector('body').appendChild(createFairyLights(5))
-  document.querySelector('body').appendChild(createBannerButton('Self-Made'))
-  document.querySelector('body').appendChild(createBannerButton('Bought'))
-  document.querySelector('body').appendChild(createBannerButton('Events'))
+  document.querySelector('body').appendChild(createBannerButton('Self-Made', 'selfmade'))
+  document.querySelector('body').appendChild(createBannerButton('Bought', 'bought'))
+  document.querySelector('body').appendChild(createBannerButton('Events', 'events'))
   goToPageEventListener()
 }
 
