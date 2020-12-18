@@ -4,3 +4,12 @@ body {
     align-items: center;
     background-color: #AAD99E;
 }
+
+.headerText {
+    text-align: center;
+    color: #2A2C2B;
+    font-family: Bungee Outline;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+}

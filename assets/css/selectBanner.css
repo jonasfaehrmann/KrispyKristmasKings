@@ -3,16 +3,20 @@
     background-repeat: no-repeat;
     background-position-x: center;
     padding-top: 34px;
-    height: 200px;
     text-align: center;
 }
 
 .selectBanner {
+    text-align-last: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    -webkit-appearance: none;
+    border-radius: 0px;
     font-family: Noto Serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
-    width: 229px;
+    width: 210px;
     box-shadow: none !important;
     color: #d9cb9e;
     background: #e3171b;

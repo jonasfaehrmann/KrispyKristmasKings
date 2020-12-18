@@ -1,0 +1,48 @@
+.fairyLightsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+}
+
+.fairyLightsContainer>div {
+    display: flex;
+    border-top: 2px solid white;
+    margin: 10px 0px;
+    justify-content: space-evenly;
+}
+
+.fairyLightsContainer>div:nth-of-type(2n) {
+    justify-content: space-between;
+}
+
+.fairyLightsContainer>div:nth-of-type(3n) {
+    justify-content: space-around;
+    transform: rotate(-1deg);
+}
+
+.fairyLightsContainer>div:nth-of-type(4n) {
+    transform: rotate(1deg);
+}
+
+.fairyLightsContainer>div>div {
+    width: 20px;
+    height: 30px;
+    border-radius: 50% 50% 50% 50% / 70% 70% 40% 40%;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid gray;
+}
+
+.fairyLightsContainer>div>div:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 4px;
+    height: 12px;
+    width: 10px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, gray 50%, lightgrey 50%, gray);
+    background-size: 7px 7px;
+}
